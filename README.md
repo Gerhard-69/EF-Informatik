@@ -1,3 +1,5 @@
 # EF-Informatik
 
-"das ist ein code"
+```py
+das ist ein code
+```
