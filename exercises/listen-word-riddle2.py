@@ -10,6 +10,5 @@ MESSAGE = [32, 5, 7, 15, 51, 23, 3, 13, 48, 2, 11, 29, 14, 6, 16, 1, 9, 0, 12, 4
 for msg in MESSAGE:
     (MAPPING[msg])
 
-
 for msg2 in MESSAGE:
     print(ALPHABET[msg2], end='')
