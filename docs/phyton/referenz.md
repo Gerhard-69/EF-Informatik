@@ -1,0 +1,1 @@
+wenn wir Zeile 1 ändern, ändern wir auch die anderen. 
