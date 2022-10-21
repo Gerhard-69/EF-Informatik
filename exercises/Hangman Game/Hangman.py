@@ -1,4 +1,7 @@
 # Variablen
+from operator import ge
+
+
 gesucht = 'test'
 
 gefunden = []
@@ -15,7 +18,6 @@ def show():
 
 def is_valid(inp):
     return True
-
 
 def eingabe():
     buchstabe = input('Buchstabe? ')
@@ -39,11 +41,14 @@ def game_over():
     pass
 
 def play():
+    while not game_over():
+        buchstabe = eingabe()
+        auswerten(buchstabe)
+        show()
+    if gewonnen():
+        print('..')
+    else:
+        print ('...')
     
 
-
-
-
-
-
-
+play()
