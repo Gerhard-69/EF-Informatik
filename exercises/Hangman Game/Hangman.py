@@ -38,17 +38,15 @@ def gewonnen():
     return True
 
 def game_over():
-            size = 1
-            for x in falsch_geraten:
-                size+=1
-            print(size)
-            Versuche = 10
-            if size == Versuche:
-                print('FETT ALARM')
-                return True
-            else:
-        
-                return False
+    size = 1
+    for x in falsch_geraten:
+        size+=1
+    print(size)
+    Versuche = 10
+    if size == Versuche:
+        print('FETT ALARM')
+        return True
+    return gewonnen()
 
 def play():
     while not game_over():
