@@ -38,17 +38,31 @@ def gewonnen():
     return True
 
 def game_over():
-    pass
+            size = 1
+            for x in falsch_geraten:
+                size+=1
+            print(size)
+            Versuche = 10
+            if size == Versuche:
+                print('FETT ALARM')
+                return True
+            else:
+        
+                return False
 
 def play():
     while not game_over():
-        buchstabe = eingabe()
-        auswerten(buchstabe)
+        BUCHSTABE = eingabe() 
+        auswerten(BUCHSTABE)
         show()
+        print(gefunden)
+        print(gesucht)
+       
     if gewonnen():
-        print('..')
+        print('Du hast das Wort erraten!')
     else:
-        print ('...')
-    
+        print('Du hast verloren!')
+
+
 
 play()
