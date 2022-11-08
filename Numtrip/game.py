@@ -8,12 +8,12 @@ board = [
 #Zahlen oben = x
 x = 0
 y = 0
-print ('   ', end='')
+print ('  ', end='')
 for i in board:
     x = x+1
     print ('', x, end='')
 print (' ')
-print ('   ', end='')
+print ('  ', end='')
 
 #Zahlen seite = y
 
@@ -23,11 +23,11 @@ for zeile in board:
     print(' ',)
     print (' ', end='')
     y = y+1
-    print (y, '', end='')
+    print (y, end='')
     for zelle in zeile:
         print(f'|{zelle}', end='')
     print('|')
-    print ('   ', end='')
+    print ('  ', end='')
 
 for zelle in board[0]:
     print(' -', end='')
