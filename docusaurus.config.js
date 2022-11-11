@@ -3,7 +3,7 @@
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
-const USERNAME = 'GERHARD69';
+const USERNAME = 'Gerhard-69';
 const REPO_NAME = 'EF-Informatik';
 
 /** @type {import('@docusaurus/types').Config} */
@@ -12,7 +12,7 @@ const config = {
   tagline: 'EF Informatik',
   url: `https://${USERNAME}.github.io/`,
   baseUrl: `/${REPO_NAME}/`,
-  onBrokenLinks: 'throw',
+  onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
 
