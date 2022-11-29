@@ -36,10 +36,12 @@ def spielfeld():
 
 spielfeld()
 
-zeilenauswahl = input('Welches Zeile?')
-spaltenauswahl = input('Welche Spalte?')
-zeilenauswahl = int(zeilenauswahl)
-spaltenauswahl = int(spaltenauswahl)
-board[zeilenauswahl][spaltenauswahl] = ' '
-
-spielfeld()
+while True:
+    zeilenauswahl = input('Welches Zeile 1-5?')
+    spaltenauswahl = input('Welche Spalte 1-5?')
+    zeilenauswahl = int(zeilenauswahl)
+    spaltenauswahl = int(spaltenauswahl)
+    zeilenauswahl = (zeilenauswahl - 1)
+    spaltenauswahl = (spaltenauswahl -1)
+    board[zeilenauswahl][spaltenauswahl] = ' '
+    spielfeld()
