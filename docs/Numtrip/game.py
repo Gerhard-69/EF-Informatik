@@ -40,7 +40,7 @@ def überprufung(raw):
     try:
         zahl = int(raw)
         if zahl > 5:
-            raise 'Zu grosse Zahl'
+            raise
         return zahl
     except:
         print ('Fehlerhafte Eingabe')
@@ -49,10 +49,30 @@ def überprufung(raw):
         zeilenauswahl = überprufung(zeilenauswahl)
         spaltenauswahl = überprufung(spaltenauswahl)
 
+def flood_fill(x ,y, old, new):
+    # we need the x and y of the start position, the old value,
+    # and the new value
+    # the flood fill has 4 parts
+    # firstly, make sure the x and y are inbounds
+    if x < 0 or x >= len(board[0]) or y < 0 or y >= len(board):
+        return
+    # secondly, check if the current position equals the old value
+    if board[y][x] != old:
+        return
+    # thirdly, set the current position to the new value
+    board[y][x] = new
+    # fourthly, attempt to fill the neighboring positions
+    flood_fill(x+1, y, old, new)
+    flood_fill(x-1, y, old, new)
+    flood_fill(x, y+1, old, new)
+    flood_fill(x, y-1, old, new)
+
 while True:
     zeilenauswahl = input('Welches Zeile 1-5?')
     spaltenauswahl = input('Welche Spalte 1-5?')
     zeilenauswahl = überprufung(zeilenauswahl)
     spaltenauswahl = überprufung(spaltenauswahl)
+    flood_fill(zeilenauswahl, spaltenauswahl, board[zeilenauswahl-1][spaltenauswahl-1], ' ')
     board[zeilenauswahl-1][spaltenauswahl-1] = ' '
     spielfeld()
+    
