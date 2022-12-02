@@ -36,12 +36,23 @@ def spielfeld():
 
 spielfeld()
 
+def überprufung(raw):
+    try:
+        zahl = int(raw)
+        if zahl > 5:
+            raise 'Zu grosse Zahl'
+        return zahl
+    except:
+        print ('Fehlerhafte Eingabe')
+        zeilenauswahl = input('Welches Zeile 1-5?')
+        spaltenauswahl = input('Welche Spalte 1-5?')
+        zeilenauswahl = überprufung(zeilenauswahl)
+        spaltenauswahl = überprufung(spaltenauswahl)
+
 while True:
     zeilenauswahl = input('Welches Zeile 1-5?')
     spaltenauswahl = input('Welche Spalte 1-5?')
-    zeilenauswahl = int(zeilenauswahl)
-    spaltenauswahl = int(spaltenauswahl)
-    zeilenauswahl = (zeilenauswahl - 1)
-    spaltenauswahl = (spaltenauswahl -1)
-    board[zeilenauswahl][spaltenauswahl] = ' '
+    zeilenauswahl = überprufung(zeilenauswahl)
+    spaltenauswahl = überprufung(spaltenauswahl)
+    board[zeilenauswahl-1][spaltenauswahl-1] = ' '
     spielfeld()
