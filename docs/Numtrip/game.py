@@ -15,9 +15,7 @@ def spielfeld():
         print ('', x, end='')
     print (' ')
     print ('  ', end='')
-
     #Zahlen seite = y
-
     for zeile in board:
         for zelle in zeile:
             print(' -', end='')
@@ -29,7 +27,6 @@ def spielfeld():
             print(f'|{zelle}', end='')
         print('|')
         print ('  ', end='')
-
     for zelle in board[0]:
         print(' -', end='')
     print(' ')
@@ -49,23 +46,14 @@ def überprufung(raw):
         zeilenauswahl = überprufung(zeilenauswahl)
         spaltenauswahl = überprufung(spaltenauswahl)
 
-def flood_fill(x ,y, old, new):
-    # we need the x and y of the start position, the old value,
-    # and the new value
-    # the flood fill has 4 parts
-    # firstly, make sure the x and y are inbounds
-    if x < 0 or x >= len(board[0]) or y < 0 or y >= len(board):
+def flood_fill(x, y, old, new):
+    if board[x][y] != old:
         return
-    # secondly, check if the current position equals the old value
-    if board[y][x] != old:
-        return
-    # thirdly, set the current position to the new value
-    board[y][x] = new
-    # fourthly, attempt to fill the neighboring positions
+    board[x][y] = new
     flood_fill(x+1, y, old, new)
     flood_fill(x-1, y, old, new)
     flood_fill(x, y+1, old, new)
-    flood_fill(x, y-1, old, new)
+    flood_fill(x, y-1, old, new) 
 
 while True:
     zeilenauswahl = input('Welches Zeile 1-5?')
