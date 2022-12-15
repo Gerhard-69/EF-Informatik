@@ -36,6 +36,7 @@ spielfeld()
 def überprufung(raw):
     try:
         zahl = int(raw)
+        zahl = zahl -1
         if zahl > 5:
             raise
         return zahl
@@ -47,6 +48,10 @@ def überprufung(raw):
         spaltenauswahl = überprufung(spaltenauswahl)
 
 def flood_fill(x, y, old, new):
+    if x >= len(board) or x == -1:
+        return
+    if y >= len(board) or y == -1:
+        return
     if board[x][y] != old:
         return
     board[x][y] = new
@@ -60,7 +65,7 @@ while True:
     spaltenauswahl = input('Welche Spalte 1-5?')
     zeilenauswahl = überprufung(zeilenauswahl)
     spaltenauswahl = überprufung(spaltenauswahl)
-    flood_fill(zeilenauswahl, spaltenauswahl, board[zeilenauswahl-1][spaltenauswahl-1], ' ')
-    board[zeilenauswahl-1][spaltenauswahl-1] = ' '
+    flood_fill(zeilenauswahl, spaltenauswahl, board[zeilenauswahl][spaltenauswahl], ' ')
+    board[zeilenauswahl][spaltenauswahl] = ' '
     spielfeld()
     
