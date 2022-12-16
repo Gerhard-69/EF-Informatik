@@ -65,7 +65,8 @@ while True:
     spaltenauswahl = input('Welche Spalte 1-5?')
     zeilenauswahl = überprufung(zeilenauswahl)
     spaltenauswahl = überprufung(spaltenauswahl)
+    save = board [zeilenauswahl][spaltenauswahl]
     flood_fill(zeilenauswahl, spaltenauswahl, board[zeilenauswahl][spaltenauswahl], ' ')
-    board[zeilenauswahl][spaltenauswahl] = ' '
+    board[zeilenauswahl][spaltenauswahl] = save*2
     spielfeld()
     
