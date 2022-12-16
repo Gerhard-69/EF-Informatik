@@ -12,23 +12,23 @@ def spielfeld():
     print ('  ', end='')
     for i in board:
         x = x+1
-        print ('', x, end='')
+        print ('  ', x, end='')
     print (' ')
-    print ('  ', end='')
+    print ('   ', end='')
     #Zahlen seite = y
     for zeile in board:
         for zelle in zeile:
-            print(' -', end='')
+            print('----', end='')
         print(' ',)
         print (' ', end='')
         y = y+1
         print (y, end='')
         for zelle in zeile:
-            print(f'|{zelle}', end='')
-        print('|')
-        print ('  ', end='')
+            print(f' | {zelle}' , end='')
+        print(' |')
+        print ('   ', end='')
     for zelle in board[0]:
-        print(' -', end='')
+        print('----', end='')
     print(' ')
 
 spielfeld()
