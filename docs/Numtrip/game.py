@@ -1,4 +1,6 @@
 import random
+random.seed(2)
+numbers = [1, 2, 4, 8]
 
 board = [
     [2, 4, 1, 8, 8],
@@ -60,7 +62,21 @@ def flood_fill(x, y, old, new):
     flood_fill(x+1, y, old, new)
     flood_fill(x-1, y, old, new)
     flood_fill(x, y+1, old, new)
-    flood_fill(x, y-1, old, new) 
+    flood_fill(x, y-1, old, new)
+
+def leerefelder(c, d, e):
+    global leer
+    if d >= 5:
+        return
+    for i in range(4):
+        if (board[c][d]) == ' ':
+            e = e+1
+            leer = e
+        c = c-1
+    d = d+1
+    c = 4
+    for i in range(4):
+        leerefelder(c, d, e)
 
 def feldverschiebung(a, b):
     zeilen2 = 4
@@ -82,11 +98,15 @@ while True:
     spaltenauswahl = input('Welche Spalte 1-5?')
     zeilen = 4
     spalten = 0
-    zeilen2 = 4
+    leer = 0
     zeilenauswahl = überprufung(zeilenauswahl)
     spaltenauswahl = überprufung(spaltenauswahl)
     save = board[zeilenauswahl][spaltenauswahl]
     flood_fill(zeilenauswahl, spaltenauswahl, board[zeilenauswahl][spaltenauswahl], ' ')
-    board[zeilenauswahl][spaltenauswahl] = save*2
+    leerefelder(zeilen, spalten, leer)
+    if leer > 1:
+        board[zeilenauswahl][spaltenauswahl] = save*2
+    else:
+        board[zeilenauswahl][spaltenauswahl] = save
     feldverschiebung(zeilen, spalten)
     spielfeld()
