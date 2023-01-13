@@ -1,3 +1,5 @@
+import random
+
 board = [
     [2, 4, 1, 8, 8],
     [4, 2, 8, 2, 1],
@@ -64,45 +66,27 @@ def feldverschiebung(a, b):
     zeilen2 = 4
     if b >= 5:
         return
-    if a <= -1:
-        return
     for i in range (4):
-        if (board[a-1][b]) == ' ':
-            a = a-2
-            if a <= -1:
-                return
-            if (board[a][b]) == ' ':
-                a = a-1
-                if a <= -1:
-                    return
-                if (board[a][b]) == ' ':
-                    a = a-1
-                    if a <= -1:
-                        return
+        if (board[a][b]) == ' ':
+            a = a-1
             board[zeilen2][b] = board[a][b]
             board[a][b] = ' '
-            a = zeilen2
         zeilen2 = zeilen2-1
+        a = zeilen2
     b = b+1
+    a = 4
     for i in range(4):
         feldverschiebung(a, b)
-def feldauffüllung(c, d):
-    if d >= 5:
-        return
-    if c <= -1:
-        return
-
 while True:
     zeilenauswahl = input('Welches Zeile 1-5?')
     spaltenauswahl = input('Welche Spalte 1-5?')
-    zeilen = 5
+    zeilen = 4
     spalten = 0
+    zeilen2 = 4
     zeilenauswahl = überprufung(zeilenauswahl)
     spaltenauswahl = überprufung(spaltenauswahl)
     save = board[zeilenauswahl][spaltenauswahl]
     flood_fill(zeilenauswahl, spaltenauswahl, board[zeilenauswahl][spaltenauswahl], ' ')
     board[zeilenauswahl][spaltenauswahl] = save*2
     feldverschiebung(zeilen, spalten)
-    feldauffüllung
     spielfeld()
-    
