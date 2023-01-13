@@ -89,10 +89,13 @@ def feldverschiebung(a, b):
             board[a][b] = ' '
         zeilen2 = zeilen2-1
         a = zeilen2
+    if board[a][b] == ' ': #feldauffüllen
+        board[a][b] = random.choice(numbers)
     b = b+1
     a = 4
     for i in range(4):
         feldverschiebung(a, b)
+
 while True:
     zeilenauswahl = input('Welches Zeile 1-5?')
     spaltenauswahl = input('Welche Spalte 1-5?')
