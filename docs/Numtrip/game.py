@@ -97,6 +97,18 @@ def feldverschiebung(a, b):
     for i in range(4):
         feldverschiebung(a, b)
 
+def spielende():
+    global Gameover
+    if board[zeilenauswahl][spaltenauswahl] == 128:
+            print ('Sieg')
+            Gameover = True
+def feldauffüllen():
+    if leer > 1:
+        board[zeilenauswahl][spaltenauswahl] = save*2
+    else:
+        board[zeilenauswahl][spaltenauswahl] = save
+
+
 Gameover = False
 
 while not Gameover:
@@ -110,12 +122,7 @@ while not Gameover:
     save = board[zeilenauswahl][spaltenauswahl]
     flood_fill(zeilenauswahl, spaltenauswahl, board[zeilenauswahl][spaltenauswahl], ' ')
     leerefelder(zeilen, spalten, leer)
-    if leer > 1:
-        board[zeilenauswahl][spaltenauswahl] = save*2
-    else:
-        board[zeilenauswahl][spaltenauswahl] = save
+    feldauffüllen()
     feldverschiebung(zeilen, spalten)
     spielfeld()
-    if board[zeilenauswahl][spaltenauswahl] == 256:
-            print ('Sieg')
-            Gameover = True
+    spielende()
