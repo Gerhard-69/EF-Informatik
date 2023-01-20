@@ -96,7 +96,9 @@ def feldverschiebung(a, b):
     for i in range(4):
         feldverschiebung(a, b)
 
-while True:
+Gameover = False
+
+while not Gameover:
     zeilenauswahl = input('Welches Zeile 1-5?')
     spaltenauswahl = input('Welche Spalte 1-5?')
     zeilen = 4
@@ -113,3 +115,6 @@ while True:
         board[zeilenauswahl][spaltenauswahl] = save
     feldverschiebung(zeilen, spalten)
     spielfeld()
+    if board[zeilenauswahl][spaltenauswahl] == 16:
+            print ('Sieg')
+            Gameover = True
