@@ -37,19 +37,20 @@ def spielfeld():
 
 spielfeld()
 
-def überprufung(raw):
+def überprufung(raw, richtung):
     try:
         zahl = int(raw)
         zahl = zahl -1
         if zahl > 5:
             raise
+        if zahl <= -1:
+            raise
         return zahl
     except:
         print ('Fehlerhafte Eingabe')
-        zeilenauswahl = input('Welches Zeile 1-5?')
-        spaltenauswahl = input('Welche Spalte 1-5?')
-        zeilenauswahl = überprufung(zeilenauswahl)
-        spaltenauswahl = überprufung(spaltenauswahl)
+        zeilenauswahl = input(f'Welche {richtung} 1-5?')
+        zeilenauswahl = überprufung(zeilenauswahl, richtung)
+        return zeilenauswahl
 
 def flood_fill(x, y, old, new):
     if x >= len(board) or x == -1:
@@ -99,13 +100,13 @@ def feldverschiebung(a, b):
 Gameover = False
 
 while not Gameover:
-    zeilenauswahl = input('Welches Zeile 1-5?')
+    zeilenauswahl = input('Welche Zeile 1-5?')
     spaltenauswahl = input('Welche Spalte 1-5?')
     zeilen = 4
     spalten = 0
     leer = 0
-    zeilenauswahl = überprufung(zeilenauswahl)
-    spaltenauswahl = überprufung(spaltenauswahl)
+    zeilenauswahl = überprufung(zeilenauswahl, 'Zeile')
+    spaltenauswahl = überprufung(spaltenauswahl, 'Spalte')
     save = board[zeilenauswahl][spaltenauswahl]
     flood_fill(zeilenauswahl, spaltenauswahl, board[zeilenauswahl][spaltenauswahl], ' ')
     leerefelder(zeilen, spalten, leer)
@@ -115,6 +116,6 @@ while not Gameover:
         board[zeilenauswahl][spaltenauswahl] = save
     feldverschiebung(zeilen, spalten)
     spielfeld()
-    if board[zeilenauswahl][spaltenauswahl] == 16:
+    if board[zeilenauswahl][spaltenauswahl] == 256:
             print ('Sieg')
             Gameover = True
