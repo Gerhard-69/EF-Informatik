@@ -102,12 +102,12 @@ def spielende():
     if board[zeilenauswahl][spaltenauswahl] == 128:
             print ('Sieg')
             Gameover = True
+
 def feldauffüllen():
     if leer > 1:
         board[zeilenauswahl][spaltenauswahl] = save*2
     else:
         board[zeilenauswahl][spaltenauswahl] = save
-
 
 Gameover = False
 
