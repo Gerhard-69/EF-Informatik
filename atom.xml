@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://Gerhard-69.github.io/EF-Informatik/</id>
+    <title>Lern Blog Blog</title>
+    <updated>2022-12-02T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://Gerhard-69.github.io/EF-Informatik/"/>
+    <subtitle>Lern Blog Blog</subtitle>
+    <icon>https://Gerhard-69.github.io/EF-Informatik/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[Lernjournal]]></title>
+        <id>/2022/12/02/Lernjournal Numtrip</id>
+        <link href="https://Gerhard-69.github.io/EF-Informatik/2022/12/02/Lernjournal Numtrip"/>
+        <updated>2022-12-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Ich habe im Numtrip jetzt eine Spielereingabe und die darauf folgende ausgabe programmiert. Das sieht ungefähr so aus:]]></summary>
+        <content type="html"><![CDATA[<p>Ich habe im Numtrip jetzt eine Spielereingabe und die darauf folgende ausgabe programmiert. Das sieht ungefähr so aus:</p><p><img loading="lazy" src="/EF-Informatik/assets/images/Numtrip spielereingabe-b2620a4f0789971dcc7bdd3139ca635e.PNG" width="809" height="361" class="img_ev3q"></p><p>Sieht vielleicht nicht übersichtlich aus und ist auch nicht gerade die kürzeste Code dafür funktioniert er gut. Die while-Schleife sorgt dafür, dass man beliebig viele Spielzüge machen kann. Dann mit dem Input frage ich nach dem Feld. Damit ich mit der Eingabe weiterarbeiten kann wandle ich sie in einen Integer um. Da die erste Stelle in der Matrix bei 0:0 ist ich aber sie mit 1-5 angeschrieben habe muss ich jetzt noch -1 von der Eingabe rechnen. Zum Schluss nur noch das ausgewählt Feld in der Matrix leeren und das Ergebnis neue Spielfeld anzeigen.</p><p>02.12.22
+Ich habe einen Grossteil der Zeit damit verbracht die Überprufung der Benutzereingabe zu programmieren, dafür funktioniert sie jetzt auch wie geplant. Den rest der Zeit habe ich versucht die nächste Aufgabe zu lösen die ich nicht wirklich verstanden habe. Valentin hat von einer anderen Seite eine andere und besser erklärte Lösung gefunden die bei mir aber noch nicht ganz richtig funktioniert.</p>]]></content>
+    </entry>
+</feed>
