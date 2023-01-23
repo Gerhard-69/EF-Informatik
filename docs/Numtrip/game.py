@@ -100,8 +100,17 @@ def feldverschiebung(a, b):
 def spielende():
     global Gameover
     if board[zeilenauswahl][spaltenauswahl] == 128:
-            print ('Sieg')
-            Gameover = True
+        print ('Sieg')
+        nochmal = True
+        global loop
+        while nochmal :
+            loop = input('möchstest du noch eine Runde spielen? 1 = Ja, 0 = Nein')
+            if loop == '0':
+                nochmal = False
+            if loop == '1':
+                nochmal = False
+            if loop == '0':
+                Gameover = True
 
 def feldauffüllen():
     if leer > 1:
@@ -109,7 +118,21 @@ def feldauffüllen():
     else:
         board[zeilenauswahl][spaltenauswahl] = save
 
+def neuesboard():
+    global loop
+    if loop == '1':
+        global board
+        board = [
+        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
+        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
+        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
+        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
+        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)]
+            ]
+        spielfeld()
+
 Gameover = False
+loop = 0
 
 while not Gameover:
     zeilenauswahl = input('Welche Zeile 1-5?')
@@ -126,3 +149,4 @@ while not Gameover:
     feldverschiebung(zeilen, spalten)
     spielfeld()
     spielende()
+    neuesboard()
