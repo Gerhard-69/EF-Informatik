@@ -69,7 +69,7 @@ def leerefelder(c, d, e):
     global leer
     if d >= 5:
         return
-    for i in range(4):
+    for i in range(5):
         if (board[c][d]) == ' ':
             e = e+1
             leer = e
