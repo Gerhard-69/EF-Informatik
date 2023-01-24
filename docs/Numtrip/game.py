@@ -5,7 +5,7 @@ numbers = [1, 2, 4, 8]
 board = [
     [2, 4, 1, 8, 8],
     [4, 2, 8, 2, 1],
-    [4, 4, 8, 4, 2],
+    [2, 4, 8, 4, 2],
     [2, 8, 1, 4, 1],
     [2, 4, 4, 4, 4]
 ]
@@ -85,17 +85,25 @@ def feldverschiebung(a, b):
         return
     for i in range (4):
         if (board[a][b]) == ' ':
+            if a-2 > -1:
+                if (board[a-1][b]) == ' ':
+                    board[zeilen2][b] = board[a-2][b]
+                    board[a-2][b] = ' '
             a = a-1
-            board[zeilen2][b] = board[a][b]
-            board[a][b] = ' '
+            if (board[a+1][b]) == ' ':
+                board[zeilen2][b] = board[a][b]
+                board[a][b] = ' '
         zeilen2 = zeilen2-1
         a = zeilen2
-    if board[a][b] == ' ': #feldauffüllen
-        board[a][b] = random.choice(numbers)
+    a = 4
+    for i in range (5):
+        if board[a][b] == ' ': #feldauffüllen
+            board[a][b] = random.choice(numbers)
+        a = a-1
     b = b+1
     a = 4
-    for i in range(4):
-        feldverschiebung(a, b)
+    #for i in range(4):
+    feldverschiebung(a, b)
 
 def spielende():
     global Gameover
