@@ -4,10 +4,10 @@ numbers = [1, 2, 4, 8]
 
 board = [
     [2, 4, 1, 8, 8],
-    [2, 2, 8, 2, 1],
-    [2, 4, 8, 4, 2],
+    [2, 2, 8, 20, 1],
+    [2, 40, 8, 4, 2],
     [2, 8, 1, 4, 1],
-    [2, 4, 4, 4, 4]
+    [2, 4, 40, 40, 4]
 ]
 def spielfeld(): 
     #Zahlen oben = x
@@ -28,7 +28,10 @@ def spielfeld():
         y = y+1
         print (y, end='')
         for zelle in zeile:
-            print(f' | {zelle}' , end='')
+            if zelle > 10:
+                print(f' |{zelle}' , end='')
+            else:
+                print(f' | {zelle}' , end='')
         print(' |')
         print ('   ', end='')
     for zelle in board[0]:
