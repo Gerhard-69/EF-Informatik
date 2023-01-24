@@ -130,6 +130,7 @@ def neuesboard():
         [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)]
             ]
         spielfeld()
+        loop = 0
 
 Gameover = False
 loop = 0
