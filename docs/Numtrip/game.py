@@ -4,7 +4,7 @@ numbers = [1, 2, 4, 8]
 
 board = [
     [2, 4, 1, 8, 8],
-    [4, 2, 8, 2, 1],
+    [2, 2, 8, 2, 1],
     [2, 4, 8, 4, 2],
     [2, 8, 1, 4, 1],
     [2, 4, 4, 4, 4]
@@ -89,6 +89,14 @@ def feldverschiebung(a, b):
                 if (board[a-1][b]) == ' ':
                     board[zeilen2][b] = board[a-2][b]
                     board[a-2][b] = ' '
+            if a-3 > -1:
+                if (board[a-2][b]) == ' ':
+                    board[zeilen2][b] = board[a-3][b]
+                    board[a-3][b] = ' '
+            if a-4 > -1:
+                if (board[a-3][b]) == ' ':
+                    board[zeilen2][b] = board[a-4][b]
+                    board[a-4][b] = ' '
             a = a-1
             if (board[a+1][b]) == ' ':
                 board[zeilen2][b] = board[a][b]
