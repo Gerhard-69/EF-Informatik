@@ -3,11 +3,11 @@ random.seed(2)
 numbers = [1, 2, 4, 8]
 
 board = [
-    [4, 4, 1, 8, 8],
-    [4, 2, 8, 2, 1],
-    [2, 4, 8, 4, 2],
-    [2, 8, 1, 4, 1],
-    [2, 4, 4, 4, 4]
+        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
+        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
+        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
+        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
+        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)]
 ]
 def spielfeld(): 
     #Zahlen oben = x
@@ -198,6 +198,7 @@ while not Gameover:
     leer = 0
     lost(zeilen, spalten)
     spielende()
+    neuesboard()
     loss = 0
     zeilenauswahl = input('Welche Zeile 1-5?')
     spaltenauswahl = input('Welche Spalte 1-5?')
@@ -209,5 +210,3 @@ while not Gameover:
     feldauffüllen()
     feldverschiebung(zeilen, spalten)
     spielfeld()
-    spielende()
-    neuesboard()
