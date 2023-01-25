@@ -83,6 +83,7 @@ def leerefelder(c, d, e):
         leerefelder(c, d, e)
 
 def feldverschiebung(a, b):
+    d = 0 # d beschreibt ob ein grösserer Sprung schon gemacht wurde.
     zeilen2 = 4
     if b >= len(board):
         return
@@ -92,20 +93,26 @@ def feldverschiebung(a, b):
                 if (board[a-1][b]) == ' ':
                     board[zeilen2][b] = board[a-2][b]
                     board[a-2][b] = ' '
-            if a-3 > -1:
-                if (board[a-2][b]) == ' ':
-                    board[zeilen2][b] = board[a-3][b]
-                    board[a-3][b] = ' '
-            if a-4 > -1:
-                if (board[a-3][b]) == ' ':
-                    board[zeilen2][b] = board[a-4][b]
-                    board[a-4][b] = ' '
-            a = a-1
-            if (board[a+1][b]) == ' ':
-                board[zeilen2][b] = board[a][b]
-                board[a][b] = ' '
+                    if board[a][b] == ' ':
+                        d = d + 1
+                    if d == 1:
+                        if a-3 > -1:
+                            if (board[a-2][b]) == ' ':
+                                board[zeilen2][b] = board[a-3][b]
+                                board[a-3][b] = ' '
+                                if board[a][b] == ' ':
+                                    d = d + 1
+                                if d == 1:
+                                    if a-4 > -1:
+                                        if (board[a-3][b]) == ' ':
+                                            board[zeilen2][b] = board[a-4][b]
+                                            board[a-4][b] = ' '
+            if (board[a][b]) == ' ':
+                board[zeilen2][b] = board[a-1][b]
+                board[a-1][b] = ' '
         zeilen2 = zeilen2-1
         a = zeilen2
+        d = 0
     a = 4
     for i in range (5):
         if board[a][b] == ' ': #feldauffüllen
@@ -113,7 +120,6 @@ def feldverschiebung(a, b):
         a = a-1
     b = b+1
     a = 4
-    #for i in range(4):
     feldverschiebung(a, b)
 
 def spielende():
