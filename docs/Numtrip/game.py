@@ -88,26 +88,26 @@ def feldverschiebung(a, b):
     if b >= len(board):
         return
     for i in range (4):
-        if (board[a][b]) == ' ':
+        if board[a][b] == ' ':
             if a-2 > -1: # wenn a < 0 wäre würde ich wieder unten im Feld landen. mit diesem if verhindere ich es
-                if (board[a-1][b]) == ' ': # ist das feld über dem leeren feld auch leer? (zwei hintereinander)
+                if board[a-1][b] == ' ': # ist das feld über dem leeren feld auch leer? (zwei hintereinander)
                     board[zeilen2][b] = board[a-2][b]
                     board[a-2][b] = ' '
                     if board[a][b] == ' ': # wenn das feld immer noch leer ist
                         d = d + 1
                     if d == 1: # wenn das feld nicht mehr leer ist würden die nächsten zeilen code alles zerstören
                         if a-3 > -1:
-                            if (board[a-2][b]) == ' ':
+                            if board[a-2][b] == ' ':
                                 board[zeilen2][b] = board[a-3][b]
                                 board[a-3][b] = ' '
                                 if board[a][b] == ' ': # wenn das feld immer noch leer ist
                                     d = d + 1
                                 if d == 2: # wenn das feld nicht mehr leer ist würden die nächsten zeilen code alles zerstören
                                     if a-4 > -1:
-                                        if (board[a-3][b]) == ' ':
+                                        if board[a-3][b] == ' ':
                                             board[zeilen2][b] = board[a-4][b]
                                             board[a-4][b] = ' '
-            if (board[a][b]) == ' ': # ist das feld immernoch leer
+            if board[a][b] == ' ': # ist das feld immernoch leer
                 board[zeilen2][b] = board[a-1][b]
                 board[a-1][b] = ' '
         zeilen2 = zeilen2-1 # für das nächste repeat eine zeile nach oben
@@ -173,10 +173,12 @@ def lost(x, y): # schaut ob kein spielzug mehr möglich ist
     if y >= len(board): # wenn ich bei reihe 6 ankomme beende die definition
         return
     old = board[x][y] # wert vom momentanen feld
-    x = x-1 # gehe in den zeilen eine nach oben
     for i in range(4):
-        if board[x][y] != old: # ist die zeile über mir nicht gleich ist kein spielzug möglich
-            loss = loss +1
+        if board[x-1][y] != old: # ist das feld über mir nicht gleich ist kein spielzug möglich
+            loss = loss + 1
+        if y < 4: # wenn y = 4 gibt es keine weitere reihe
+            if board[x][y+1] != old: # ist das feld in der nächsten reihe nicht gleich ist kein spielzug möglich
+                loss = loss + 1
         if board[x][y] == old: # ist ein spielzug möglich wird die definition beendet
             loss = 0 # heisst es ist mindestens ein Spielzug möglich
             return
