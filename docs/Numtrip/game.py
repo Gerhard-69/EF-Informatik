@@ -183,13 +183,18 @@ def lost(x, y):
 Gameover = False
 loop = 0
 loss = 0
+zeilenauswahl = 0
+spaltenauswahl = 0
 
 while not Gameover:
-    zeilenauswahl = input('Welche Zeile 1-5?')
-    spaltenauswahl = input('Welche Spalte 1-5?')
     zeilen = 4
     spalten = 0
     leer = 0
+    lost(zeilen, spalten)
+    spielende()
+    loss = 0
+    zeilenauswahl = input('Welche Zeile 1-5?')
+    spaltenauswahl = input('Welche Spalte 1-5?')
     zeilenauswahl = überprufung(zeilenauswahl, 'Zeile')
     spaltenauswahl = überprufung(spaltenauswahl, 'Spalte')
     save = board[zeilenauswahl][spaltenauswahl]
@@ -197,8 +202,6 @@ while not Gameover:
     leerefelder(zeilen, spalten, leer)
     feldauffüllen()
     feldverschiebung(zeilen, spalten)
-    lost(zeilen, spalten)
     spielfeld()
     spielende()
-    loss = 0
     neuesboard()
