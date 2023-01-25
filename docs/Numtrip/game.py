@@ -3,11 +3,11 @@ random.seed(2)
 numbers = [1, 2, 4, 8]
 
 board = [
-    [2, 4, 1, 8, 8],
-    [2, 2, 8, 20, 1],
-    [2, 40, 8, 4, 2],
+    [4, 4, 1, 8, 8],
+    [4, 2, 8, 2, 1],
+    [2, 4, 8, 4, 2],
     [2, 8, 1, 4, 1],
-    [2, 4, 40, 40, 4]
+    [2, 4, 4, 4, 4]
 ]
 def spielfeld(): 
     #Zahlen oben = x
@@ -70,7 +70,7 @@ def flood_fill(x, y, old, new):
 
 def leerefelder(c, d, e):
     global leer
-    if d >= 5:
+    if d >= len(board):
         return
     for i in range(5):
         if (board[c][d]) == ' ':
@@ -84,7 +84,7 @@ def leerefelder(c, d, e):
 
 def feldverschiebung(a, b):
     zeilen2 = 4
-    if b >= 5:
+    if b >= len(board):
         return
     for i in range (4):
         if (board[a][b]) == ' ':
@@ -130,6 +130,17 @@ def spielende():
                 nochmal = False
             if loop == '0':
                 Gameover = True
+    if loss > 0:
+        print ('du hast verloren')
+        nochmal = True
+        while nochmal :
+            loop = input('möchstest du noch eine Runde spielen? 1 = Ja, 0 = Nein')
+            if loop == '0':
+                nochmal = False
+            if loop == '1':
+                nochmal = False
+            if loop == '0':
+                Gameover = True
 
 def feldauffüllen():
     if leer > 1:
@@ -151,8 +162,27 @@ def neuesboard():
         spielfeld()
         loop = 0
 
+def lost(x, y):
+    global loss
+    if y >= len(board):
+        return
+    old = board[x][y]
+    x = x-1
+    for i in range(4):
+        if board[x][y] != old:
+            loss = loss +1
+        if board[x][y] == old:
+            loss = 0
+            return
+        old = board[x][y]
+        x = x-1
+    x = 4
+    y = y+1
+    lost(x, y)
+
 Gameover = False
 loop = 0
+loss = 0
 
 while not Gameover:
     zeilenauswahl = input('Welche Zeile 1-5?')
@@ -167,6 +197,8 @@ while not Gameover:
     leerefelder(zeilen, spalten, leer)
     feldauffüllen()
     feldverschiebung(zeilen, spalten)
+    lost(zeilen, spalten)
     spielfeld()
     spielende()
+    loss = 0
     neuesboard()
