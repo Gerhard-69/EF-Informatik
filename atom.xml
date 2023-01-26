@@ -2,18 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Gerhard-69.github.io/EF-Informatik/</id>
     <title>Lern Blog Blog</title>
-    <updated>2022-12-02T00:00:00.000Z</updated>
+    <updated>2023-01-26T12:11:38.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Gerhard-69.github.io/EF-Informatik/"/>
     <subtitle>Lern Blog Blog</subtitle>
     <icon>https://Gerhard-69.github.io/EF-Informatik/img/favicon.ico</icon>
     <entry>
+        <title type="html"><![CDATA[Top-Down-Entwurf]]></title>
+        <id>/Top-Down-Entwurf</id>
+        <link href="https://Gerhard-69.github.io/EF-Informatik/Top-Down-Entwurf"/>
+        <updated>2023-01-26T12:11:38.000Z</updated>
+        <summary type="html"><![CDATA[Wir haben einem das Spielfeld in dem schauen müssen, dass zwei oder drei stellige Zahlen zentriert sind und das wir nach einem Spielzug das Feld wieder auffüllen. (Visuelles)]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="/EF-Informatik/assets/images/TopDown Numtrip-bf482b41ab1db54c5de628f2a955df52.png" width="2016" height="1512" class="img_ev3q"></p><p>Wir haben einem das Spielfeld in dem schauen müssen, dass zwei oder drei stellige Zahlen zentriert sind und das wir nach einem Spielzug das Feld wieder auffüllen. (Visuelles)</p><p>Im Spielzweig passiert alles was man während dem spielen nicht sieht also ob der Spielzug gültig ist, ob das Spiel gestartet wurde und wieviele Punkte der Spieler hat mit einem dementsprechenden Spielende.</p>]]></content>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[Lernjournal]]></title>
         <id>/2022/12/02/Lernjournal Numtrip</id>
         <link href="https://Gerhard-69.github.io/EF-Informatik/2022/12/02/Lernjournal Numtrip"/>
         <updated>2022-12-02T00:00:00.000Z</updated>
-        <summary type="html"><![CDATA[Wir haben einem das Spielfeld in dem schauen müssen, dass zwei oder drei stellige Zahlen zentriert sind und das wir nach einem Spielzug das Feld wieder auffüllen. (Visuelles)]]></summary>
-        <content type="html"><![CDATA[<p><img loading="lazy" src="/EF-Informatik/assets/images/TopDown Numtrip-bf482b41ab1db54c5de628f2a955df52.png" width="2016" height="1512" class="img_ev3q"></p><p>Wir haben einem das Spielfeld in dem schauen müssen, dass zwei oder drei stellige Zahlen zentriert sind und das wir nach einem Spielzug das Feld wieder auffüllen. (Visuelles)</p><p>Im Spielzweig passiert alles was man während dem spielen nicht sieht also ob der Spielzug gültig ist, ob das Spiel gestartet wurde und wieviele Punkte der Spieler hat mit einem dementsprechenden Spielende.</p><p>Ich habe im Numtrip jetzt eine Spielereingabe und die darauf folgende Ausgabe programmiert. Das sieht ungefähr so aus:</p><p><img loading="lazy" src="/EF-Informatik/assets/images/Numtrip spielereingabe-b2620a4f0789971dcc7bdd3139ca635e.PNG" width="809" height="361" class="img_ev3q"></p><p>Sieht vielleicht nicht übersichtlich aus und ist auch nicht gerade die kürzeste Code dafür funktioniert er gut. Die while-Schleife sorgt dafür, dass man beliebig viele Spielzüge machen kann. Dann mit dem Input frage ich nach dem Feld. Damit ich mit der Eingabe weiterarbeiten kann wandle ich sie in einen Integer um. Da die erste Stelle in der Matrix bei 0:0 ist ich aber sie mit 1-5 angeschrieben habe muss ich jetzt noch -1 von der Eingabe rechnen. Zum Schluss nur noch das ausgewählt Feld in der Matrix leeren und das Ergebnis neue Spielfeld anzeigen.</p><p>02.12.22
+        <summary type="html"><![CDATA[Sieht vielleicht nicht übersichtlich aus und ist auch nicht gerade die kürzeste Code dafür funktioniert er gut. Die while-Schleife sorgt dafür, dass man beliebig viele Spielzüge machen kann. Dann mit dem Input frage ich nach dem Feld. Damit ich mit der Eingabe weiterarbeiten kann wandle ich sie in einen Integer um. Da die erste Stelle in der Matrix bei 0:0 ist ich aber sie mit 1-5 angeschrieben habe muss ich jetzt noch -1 von der Eingabe rechnen. Zum Schluss nur noch das ausgewählt Feld in der Matrix leeren und das Ergebnis neue Spielfeld anzeigen.]]></summary>
+        <content type="html"><![CDATA[<p><img loading="lazy" src="/EF-Informatik/assets/images/Numtrip spielereingabe-b2620a4f0789971dcc7bdd3139ca635e.PNG" width="809" height="361" class="img_ev3q"></p><p>Sieht vielleicht nicht übersichtlich aus und ist auch nicht gerade die kürzeste Code dafür funktioniert er gut. Die while-Schleife sorgt dafür, dass man beliebig viele Spielzüge machen kann. Dann mit dem Input frage ich nach dem Feld. Damit ich mit der Eingabe weiterarbeiten kann wandle ich sie in einen Integer um. Da die erste Stelle in der Matrix bei 0:0 ist ich aber sie mit 1-5 angeschrieben habe muss ich jetzt noch -1 von der Eingabe rechnen. Zum Schluss nur noch das ausgewählt Feld in der Matrix leeren und das Ergebnis neue Spielfeld anzeigen.</p><p>02.12.22
 Ich habe einen Grossteil der Zeit damit verbracht die Überprufung der Benutzereingabe zu programmieren, dafür funktioniert sie jetzt auch wie geplant. Den rest der Zeit habe ich versucht die nächste Aufgabe zu lösen die ich nicht wirklich verstanden habe. Valentin hat von einer anderen Seite eine andere und besser erklärte Lösung gefunden die bei mir aber noch nicht ganz richtig funktioniert.</p>]]></content>
     </entry>
 </feed>
