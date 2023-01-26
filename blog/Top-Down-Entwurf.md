@@ -1,4 +1,4 @@
-![](../images/TopDown%20Numtrip.png)
+![](images/TopDown%20Numtrip.png)
 
 Wir haben einem das Spielfeld in dem schauen müssen, dass zwei oder drei stellige Zahlen zentriert sind und das wir nach einem Spielzug das Feld wieder auffüllen. (Visuelles)
 
