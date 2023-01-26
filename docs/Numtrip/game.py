@@ -78,8 +78,7 @@ def leerefelder(c, d, e):
         c = c-1 # gehe eine zeile nach oben
     d = d+1 # gehe in die nächste reihe
     c = 4 # gehe wieder nach zeile 5
-    for i in range(4):
-        leerefelder(c, d, e)
+    leerefelder(c, d, e)
 
 def feldverschiebung(a, b):
     d = 0 # d beschreibt ob ein grösserer Sprung schon gemacht wurde.
