@@ -40,51 +40,51 @@ def spielfeld():
 spielfeld()
 
 def überprufung(raw, richtung):
-    try:
-        zahl = int(raw)
-        zahl = zahl -1
-        if zahl > 5:
+    try: # wenn error gehe in except
+        zahl = int(raw) # ändere zahl zu einen integrer
+        zahl = zahl -1 # verkleinere Zahl um 1 weil in matrix erste stelle gleich 0 ist
+        if zahl > 5: # ist die zahl zu gross mache künstlichen fehler
             raise
-        if zahl <= -1:
+        if zahl <= -1:# ist die zahl zu klein mache künstlichen fehler
             raise
         return zahl
-    except:
+    except: # wenn error oder raise
         print ('Fehlerhafte Eingabe')
-        zeilenauswahl = input(f'Welche {richtung} 1-5?')
-        zeilenauswahl = überprufung(zeilenauswahl, richtung)
-        return zeilenauswahl
+        zeilenauswahl = input(f'Welche {richtung} 1-5?') # frage erneut nach der falschen eingabe
+        zeilenauswahl = überprufung(zeilenauswahl, richtung) #wiederhole überprüfung
+        return zeilenauswahl # gib die erneute überprüfung zurück
 
 def flood_fill(x, y, old, new):
-    if x >= len(board) or x == -1:
+    if x >= len(board) or x == -1: # ist zeile aus dem feld dann beende
         return
-    if y >= len(board) or y == -1:
+    if y >= len(board) or y == -1: # ist reihe aus dem feld dann beende
         return
-    if board[x][y] != old:
+    if board[x][y] != old: # gleiche zahl wie altes feld dann beende
         return
-    board[x][y] = new
-    flood_fill(x+1, y, old, new)
-    flood_fill(x-1, y, old, new)
-    flood_fill(x, y+1, old, new)
-    flood_fill(x, y-1, old, new)
+    board[x][y] = new # wenn kein return dann leere das feld
+    flood_fill(x+1, y, old, new) # gehe in den zeilen eins nach unten
+    flood_fill(x-1, y, old, new) # gehe in den zeilen eins nach oben
+    flood_fill(x, y+1, old, new) # gehe in den reihen eins nach rechts
+    flood_fill(x, y-1, old, new) # gehe in den reihen eins nach links
 
 def leerefelder(c, d, e):
-    global leer
-    if d >= len(board):
+    global leer # beziehe und verändere dich auf die globale variable
+    if d >= len(board): # wenn spalten grösser als das board spalten hat beende
         return
     for i in range(5):
-        if (board[c][d]) == ' ':
-            e = e+1
-            leer = e
-        c = c-1
-    d = d+1
-    c = 4
+        if (board[c][d]) == ' ': # ist das feld leer dann
+            e = e+1 # erhöre denn leerefelder zähler
+            leer = e # setze die variable  mit dem zähler gleich
+        c = c-1 # gehe eine zeile nach oben
+    d = d+1 # gehe in die nächste reihe
+    c = 4 # gehe wieder nach zeile 5
     for i in range(4):
         leerefelder(c, d, e)
 
 def feldverschiebung(a, b):
     d = 0 # d beschreibt ob ein grösserer Sprung schon gemacht wurde.
     zeilen2 = 4 # merkt sich Zeile in der ich mich befinde
-    if b >= len(board):
+    if b >= len(board): # wenn spalten grösser als das board spalten hat beende
         return
     for i in range (4):
         if board[a][b] == ' ':
