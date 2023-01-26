@@ -14,21 +14,20 @@ def spielfeld():
     x = 0
     y = 0 
     print ('  ', end='')
-    for i in board:
+    for i in board: # Beschriftung reihen
         x = x+1
         print ('  ', x, end='')
-    print (' ')
-    print ('   ', end='')
-    #Zahlen seite = y
-    for zeile in board:
-        for zelle in zeile:
+    print (' ') # neue zeile
+    print ('   ', end='') # abstand und auf gleicher zeile bleiben
+    for zeile in board: # wiederhole für die anzahl zeilen
+        for zelle in zeile: # widerhole für die anzahl reihen
             print('----', end='')
-        print(' ',)
-        print (' ', end='')
-        y = y+1
+        print(' ',) # neues zeile
+        print (' ', end='') #abstand und auf gleicher zeile bleiben
+        y = y+1 #Zahlen seite
         print (y, end='')
-        for zelle in zeile:
-            if zelle > 10:
+        for zelle in zeile: # wiederhole für anzahl reihen
+            if zelle > 10: # wenn zahl zweistellig kleinerer abstand
                 print(f' |{zelle}' , end='')
             else:
                 print(f' | {zelle}' , end='')
