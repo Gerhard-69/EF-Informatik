@@ -9,7 +9,7 @@ board = [
         [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
         [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)]
 ]
-def spielfeld(): 
+def spielfeld(): # erstelle das Spielfeld
     #Zahlen oben = x
     x = 0
     y = 0 
@@ -196,17 +196,17 @@ while not Gameover:
     zeilen = 4
     spalten = 0
     leer = 0
-    lost(zeilen, spalten)
-    spielende()
-    neuesboard()
+    lost(zeilen, spalten) # überprüfe ob kein Spielzug mehr möglich ist
+    spielende() # überprüft ob das spiel zu ende ist
+    neuesboard() # erstellt wenn das spiel nochmal gespielt wird ein neues spielfeld
     loss = 0
     zeilenauswahl = input('Welche Zeile 1-5?')
     spaltenauswahl = input('Welche Spalte 1-5?')
     zeilenauswahl = überprufung(zeilenauswahl, 'Zeile')
     spaltenauswahl = überprufung(spaltenauswahl, 'Spalte')
     save = board[zeilenauswahl][spaltenauswahl]
-    flood_fill(zeilenauswahl, spaltenauswahl, board[zeilenauswahl][spaltenauswahl], ' ')
-    leerefelder(zeilen, spalten, leer)
-    feldauffüllen()
-    feldverschiebung(zeilen, spalten)
+    flood_fill(zeilenauswahl, spaltenauswahl, board[zeilenauswahl][spaltenauswahl], ' ') # leere die felder die gleich und anliegend zu dem wausgewählten feld sind 
+    leerefelder(zeilen, spalten, leer) # zähle die leeren felder
+    feldauffüllen() # fülle das ausgewählte feld das durch floodfill geleert wurde wieder auf
+    feldverschiebung(zeilen, spalten) # schiebe leere felder nach oben und fülle diese mit zufälligen zahlen
     spielfeld()
