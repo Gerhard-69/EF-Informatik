@@ -2,42 +2,27 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Gerhard-69.github.io/EF-Informatik/</id>
     <title>Lern Blog Blog</title>
-    <updated>2023-01-26T12:24:37.000Z</updated>
+    <updated>2023-01-27T14:11:08.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Gerhard-69.github.io/EF-Informatik/"/>
     <subtitle>Lern Blog Blog</subtitle>
     <icon>https://Gerhard-69.github.io/EF-Informatik/img/favicon.ico</icon>
     <entry>
-        <title type="html"><![CDATA[Probleme beim Programmieren]]></title>
-        <id>/Probleme beim Programmieren</id>
-        <link href="https://Gerhard-69.github.io/EF-Informatik/Probleme beim Programmieren"/>
-        <updated>2023-01-26T12:24:37.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Tipps für andere EF Schüler]]></title>
-        <id>/Tipps für andere EF Schüler</id>
-        <link href="https://Gerhard-69.github.io/EF-Informatik/Tipps für andere EF Schüler"/>
-        <updated>2023-01-26T12:24:37.000Z</updated>
+        <title type="html"><![CDATA[Numtrip]]></title>
+        <id>/Numtrip</id>
+        <link href="https://Gerhard-69.github.io/EF-Informatik/Numtrip"/>
+        <updated>2023-01-27T14:11:08.000Z</updated>
+        <summary type="html"><![CDATA[Ziel des Spiels]]></summary>
+        <content type="html"><![CDATA[<p><strong>Ziel des Spiels</strong></p><p><strong>Umsetzung des Spiels</strong></p><p><strong>Grösste Herrausforderung</strong><br>
+<!-- -->Ich bin beim Programmieren sehr oft auf Probleme gestossen die ich mal mehr mal weniger elegant gelöst habe. Ein Problem auf das ich immer wieder gestossen bin hat sich in meiner feldverschiebung definition abgespielt. Diese hat zwar immer funktioniert aber nie ganz, da ich nie smart genug war mehrere senarien zu testen und sie dann nur für einen speziellen fall funktioniert hat. Also musste ich immer wieder zu der Definition zurückkehren um mir erneut gedanken dazu zu machen. </p><p><strong>Tipps</strong></p>]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Top-Down-Entwurf]]></title>
         <id>/Top-Down-Entwurf</id>
         <link href="https://Gerhard-69.github.io/EF-Informatik/Top-Down-Entwurf"/>
-        <updated>2023-01-26T12:24:37.000Z</updated>
+        <updated>2023-01-27T14:11:08.000Z</updated>
         <summary type="html"><![CDATA[Wir haben einmal das Spielfeld in dem schauen müssen, dass zwei oder drei stellige Zahlen zentriert sind und das wir nach einem Spielzug das Feld wieder auffüllen. (Visuelles)]]></summary>
         <content type="html"><![CDATA[<p><img loading="lazy" src="/EF-Informatik/assets/images/TopDown Numtrip-bf482b41ab1db54c5de628f2a955df52.png" width="2016" height="1512" class="img_ev3q"></p><p>Wir haben einmal das Spielfeld in dem schauen müssen, dass zwei oder drei stellige Zahlen zentriert sind und das wir nach einem Spielzug das Feld wieder auffüllen. (Visuelles)</p><p>Im Spielzweig passiert alles was man während dem spielen nicht sieht also ob der Spielzug gültig ist, ob das Spiel gestartet wurde und wieviele Punkte der Spieler hat mit einem dementsprechenden Spielende.</p>]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Umsetztung des Spiels]]></title>
-        <id>/Umsetztung des Spiels</id>
-        <link href="https://Gerhard-69.github.io/EF-Informatik/Umsetztung des Spiels"/>
-        <updated>2023-01-26T12:24:37.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Ziel des Spiels]]></title>
-        <id>/Ziel des Spiels</id>
-        <link href="https://Gerhard-69.github.io/EF-Informatik/Ziel des Spiels"/>
-        <updated>2023-01-26T12:24:37.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[Lernjournal]]></title>
