@@ -4,15 +4,23 @@
         <title>Lern Blog Blog</title>
         <link>https://Gerhard-69.github.io/EF-Informatik/</link>
         <description>Lern Blog Blog</description>
-        <lastBuildDate>Fri, 27 Jan 2023 14:37:17 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 27 Jan 2023 14:45:26 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>de</language>
         <item>
+            <title><![CDATA[Datenstruktur]]></title>
+            <link>https://Gerhard-69.github.io/EF-Informatik/Datenstruktur</link>
+            <guid>/Datenstruktur</guid>
+            <pubDate>Fri, 27 Jan 2023 14:45:26 GMT</pubDate>
+            <description><![CDATA[Das Spielfeld besteht aus Zeilen und diese wiederrum auf Spalten und in diesen Spalten sind wiederum Zahlen. "Verbindet" man diese Zahlen werden die Spalten neu definiert.]]></description>
+            <content:encoded><![CDATA[<p><img loading="lazy" src="/EF-Informatik/assets/images/Datenstruktur-89de331e7d798e10904e0f21cc8c5f3a.PNG" width="2031" height="1345" class="img_ev3q"></p><p>Das Spielfeld besteht aus Zeilen und diese wiederrum auf Spalten und in diesen Spalten sind wiederum Zahlen. "Verbindet" man diese Zahlen werden die Spalten neu definiert.</p>]]></content:encoded>
+        </item>
+        <item>
             <title><![CDATA[**Numtrip Blog**]]></title>
             <link>https://Gerhard-69.github.io/EF-Informatik/Numtrip</link>
             <guid>/Numtrip</guid>
-            <pubDate>Fri, 27 Jan 2023 14:37:17 GMT</pubDate>
+            <pubDate>Fri, 27 Jan 2023 14:45:26 GMT</pubDate>
             <description><![CDATA[Numtrip ist ein Denkspiel das ähnlichkeiten dem sehr populären Spiel 2048 hat. Das Feld besteht auf gleich viel Reihen und Zeilen. Die Felder sind gefüllt zufälligen geraden Zahlen. Man kann ein Feld auswählen, wenn ein anligendes Feld mit der selben Zahl gefüllt werden diese und die mit diesem Feld anliegende Verbunden. Das ausgewählte feld wird verdoppelt. Das ganze geht so bis man 1024 erreicht hat.]]></description>
             <content:encoded><![CDATA[<h1>Ziel des Spiels</h1><p>Numtrip ist ein Denkspiel das ähnlichkeiten dem sehr populären Spiel 2048 hat. Das Feld besteht auf gleich viel Reihen und Zeilen. Die Felder sind gefüllt zufälligen geraden Zahlen. Man kann ein Feld auswählen, wenn ein anligendes Feld mit der selben Zahl gefüllt werden diese und die mit diesem Feld anliegende Verbunden. Das ausgewählte feld wird verdoppelt. Das ganze geht so bis man 1024 erreicht hat.</p><h1>Umsetzung des Spiels</h1><h1>Grösste Herrausforderung</h1><p>Ich bin beim Programmieren sehr oft auf Probleme gestossen die ich mal mehr mal weniger elegant gelöst habe. Ein Problem auf das ich immer wieder gestossen bin hat sich in meiner feldverschiebung definition abgespielt. Diese hat zwar immer funktioniert aber nie ganz, da ich nie smart genug war mehrere senarien zu testen und sie dann nur für einen speziellen fall funktioniert hat. Also musste ich immer wieder zu der Definition zurückkehren um mir erneut gedanken dazu zu machen. </p><h1>Tipps</h1>]]></content:encoded>
         </item>
@@ -20,7 +28,7 @@
             <title><![CDATA[Top-Down-Entwurf]]></title>
             <link>https://Gerhard-69.github.io/EF-Informatik/Top-Down-Entwurf</link>
             <guid>/Top-Down-Entwurf</guid>
-            <pubDate>Fri, 27 Jan 2023 14:37:17 GMT</pubDate>
+            <pubDate>Fri, 27 Jan 2023 14:45:26 GMT</pubDate>
             <description><![CDATA[Wir haben einmal das Spielfeld in dem schauen müssen, dass zwei oder drei stellige Zahlen zentriert sind und das wir nach einem Spielzug das Feld wieder auffüllen. (Visuelles)]]></description>
             <content:encoded><![CDATA[<p><img loading="lazy" src="/EF-Informatik/assets/images/TopDown Numtrip-bf482b41ab1db54c5de628f2a955df52.png" width="2016" height="1512" class="img_ev3q"></p><p>Wir haben einmal das Spielfeld in dem schauen müssen, dass zwei oder drei stellige Zahlen zentriert sind und das wir nach einem Spielzug das Feld wieder auffüllen. (Visuelles)</p><p>Im Spielzweig passiert alles was man während dem spielen nicht sieht also ob der Spielzug gültig ist, ob das Spiel gestartet wurde und wieviele Punkte der Spieler hat mit einem dementsprechenden Spielende.</p>]]></content:encoded>
         </item>
