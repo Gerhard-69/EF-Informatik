@@ -170,16 +170,22 @@ def lost(x, y): # schaut ob kein spielzug mehr möglich ist
     global loss # wenn keiner mehr möglich ist dann ist loss > 0
     if y >= len(board): # wenn ich bei reihe 6 ankomme beende die definition
         return
-    old = board[x][y] # wert vom momentanen feld
-    for i in range(4):
-        if board[x-1][y] != old: # ist das feld über mir nicht gleich ist kein spielzug möglich
-            loss = loss + 1
+    for i in range(5):
+        old = board[x][y] # wert vom momentanen feld
+        if x > 0:
+            if board[x-1][y] != old: # ist das feld über mir nicht gleich ist kein spielzug möglich
+                loss = loss + 1
         if y < 4: # wenn y = 4 gibt es keine weitere reihe
             if board[x][y+1] != old: # ist das feld in der nächsten reihe nicht gleich ist kein spielzug möglich
                 loss = loss + 1
-        if board[x][y] == old: # ist ein spielzug möglich wird die definition beendet
-            loss = 0 # heisst es ist mindestens ein Spielzug möglich
-            return
+        if x > 0:
+            if board[x-1][y] == old: # ist ein spielzug möglich wird die definition beendet
+                loss = 0 # heisst es ist mindestens ein Spielzug möglich
+                return
+        if y < 4:
+            if board[x][y+1] == old: # ist ein spielzug möglich wird die definition beendet
+                loss = 0 # heisst es ist mindestens ein Spielzug möglich
+                return
         old = board[x][y]
         x = x-1
     x = 4
