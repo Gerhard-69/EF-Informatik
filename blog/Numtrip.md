@@ -1,5 +1,7 @@
-# Ziel des Spiels
+# **Numtrip Blog**
 
+# Ziel des Spiels
+Numtrip ist ein Denkspiel das ähnlichkeiten dem sehr populären Spiel 2048 hat. Das Feld besteht auf gleich viel Reihen und Zeilen. Die Felder sind gefüllt zufälligen geraden Zahlen. Man kann ein Feld auswählen, wenn ein anligendes Feld mit der selben Zahl gefüllt werden diese und die mit diesem Feld anliegende Verbunden. Das ausgewählte feld wird verdoppelt. Das ganze geht so bis man 1024 erreicht hat.
 # Umsetzung des Spiels
 
 # Grösste Herrausforderung  
