@@ -186,7 +186,6 @@ def lost(x, y): # schaut ob kein spielzug mehr möglich ist
             if board[x][y+1] == old: # ist ein spielzug möglich wird die definition beendet
                 loss = 0 # heisst es ist mindestens ein Spielzug möglich
                 return
-        old = board[x][y]
         x = x-1
     x = 4
     y = y+1
