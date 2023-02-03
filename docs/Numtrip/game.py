@@ -2,13 +2,17 @@ import random
 random.seed(2)
 numbers = [1, 2, 4, 8] # bestimmt die zahlen die zufällig ausgewählt werden
 
-board = [
-        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
-        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
-        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
-        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
-        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)]
-]
+board = []
+Row = 5
+
+def field_fill():
+    for i in range(Row):
+        board.append([])
+        for j in range(Row):
+            randomint = random.choice(numbers)
+            board[i].append(randomint) #For loop um das Feld am Anfang aufzufüllen
+field_fill()
+
 def spielfeld(): # erstelle das Spielfeld
     #Zahlen oben = x
     x = 0
@@ -156,13 +160,7 @@ def neuesboard():
     global loop # loop kommt aus spielende ist wird 1 gesetzt wenn noch eine runde gespielt werden will.
     if loop == '1':
         global board # ersetze das ganze board mit zufälligen zahlen
-        board = [
-        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
-        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
-        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
-        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)],
-        [random.choice(numbers),random.choice(numbers), random.choice(numbers), random.choice(numbers), random.choice(numbers)]
-            ]
+        field_fill()
         spielfeld()
         loop = 0
 
@@ -215,3 +213,4 @@ while not Gameover:
     feldauffüllen() # fülle das ausgewählte feld das durch floodfill geleert wurde wieder auf
     feldverschiebung(zeilen, spalten) # schiebe leere felder nach oben und fülle diese mit zufälligen zahlen
     spielfeld()
+
