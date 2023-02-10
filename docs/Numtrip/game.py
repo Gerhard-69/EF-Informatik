@@ -68,57 +68,55 @@ def flood_fill(x, y, old, new):
     flood_fill(x, y-1, old, new) # gehe in den reihen eins nach links
 
 def leerefelder(c, d, e):
-    global leer # beziehe und verändere dich auf die globale variable
     if d >= len(board): # wenn spalten grösser als das board spalten hat beende
-        return
+        return e
     for i in range(5):
         if (board[c][d]) == ' ': # ist das feld leer dann
             e = e+1 # erhöre denn leerefelder zähler
-            leer = e # setze die variable  mit dem zähler gleich
         c = c-1 # gehe eine zeile nach oben
     d = d+1 # gehe in die nächste reihe
     c = 4 # gehe wieder nach zeile 5
-    leerefelder(c, d, e)
+    return leerefelder(c, d, e)
 
-def feldverschiebung(a, b):
+def feldverschiebung(zeilen, spalten):
     d = 0 # d beschreibt ob ein grösserer Sprung schon gemacht wurde.
     zeilen2 = 4 # merkt sich Zeile in der ich mich befinde
-    if b >= len(board): # wenn spalten grösser als das board spalten hat beende
+    if spalten >= len(board): # wenn spalten grösser als das board spalten hat beende
         return
     for i in range (4):
-        if board[a][b] == ' ':
-            if a-2 > -1: # wenn a < 0 wäre würde ich wieder unten im Feld landen. mit diesem if verhindere ich es
-                if board[a-1][b] == ' ': # ist das feld über dem leeren feld auch leer? (zwei hintereinander)
-                    board[zeilen2][b] = board[a-2][b]
-                    board[a-2][b] = ' '
-                    if board[a][b] == ' ': # wenn das feld immer noch leer ist
+        if board[zeilen][spalten] == ' ':
+            if zeilen-2 > -1: # wenn a < 0 wäre würde ich wieder unten im Feld landen. mit diesem if verhindere ich es
+                if board[zeilen-1][spalten] == ' ': # ist das feld über dem leeren feld auch leer? (zwei hintereinander)
+                    board[zeilen2][spalten] = board[zeilen-2][spalten]
+                    board[zeilen-2][spalten] = ' '
+                    if board[zeilen][spalten] == ' ': # wenn das feld immer noch leer ist
                         d = d + 1
                     if d == 1: # wenn das feld nicht mehr leer ist würden die nächsten zeilen code alles zerstören
-                        if a-3 > -1:
-                            if board[a-2][b] == ' ':
-                                board[zeilen2][b] = board[a-3][b]
-                                board[a-3][b] = ' '
-                                if board[a][b] == ' ': # wenn das feld immer noch leer ist
+                        if zeilen-3 > -1:
+                            if board[zeilen-2][spalten] == ' ':
+                                board[zeilen2][spalten] = board[zeilen-3][spalten]
+                                board[zeilen-3][spalten] = ' '
+                                if board[zeilen][spalten] == ' ': # wenn das feld immer noch leer ist
                                     d = d + 1
                                 if d == 2: # wenn das feld nicht mehr leer ist würden die nächsten zeilen code alles zerstören
-                                    if a-4 > -1:
-                                        if board[a-3][b] == ' ':
-                                            board[zeilen2][b] = board[a-4][b]
-                                            board[a-4][b] = ' '
-            if board[a][b] == ' ': # ist das feld immernoch leer
-                board[zeilen2][b] = board[a-1][b]
-                board[a-1][b] = ' '
+                                    if zeilen-4 > -1:
+                                        if board[zeilen-3][spalten] == ' ':
+                                            board[zeilen2][spalten] = board[zeilen-4][spalten]
+                                            board[zeilen-4][spalten] = ' '
+            if board[zeilen][spalten] == ' ': # ist das feld immernoch leer
+                board[zeilen2][spalten] = board[zeilen-1][spalten]
+                board[zeilen-1][spalten] = ' '
         zeilen2 = zeilen2-1 # für das nächste repeat eine zeile nach oben
-        a = zeilen2
+        zeilen = zeilen2
         d = 0 #resette den counter
-    a = 4 # wieder nach unten in den zeilen
+    zeilen = 4 # wieder nach unten in den zeilen
     for i in range (5): # gehe alle felder in der Spalte durch und wenn eines leer ist fülle es mit einer zufälligen zahl auf
-        if board[a][b] == ' ': #feldauffüllen
-            board[a][b] = random.choice(numbers)
-        a = a-1
-    b = b+1 # gehe nach spalte 2
-    a = 4
-    feldverschiebung(a, b)
+        if board[zeilen][spalten] == ' ': #feldauffüllen
+            board[zeilen][spalten] = random.choice(numbers)
+        zeilen = zeilen-1
+    spalten = spalten+1 # gehe nach spalte 2
+    zeilen = 4
+    feldverschiebung(zeilen, spalten)
 
 def spielende():
     global Gameover
@@ -211,7 +209,7 @@ while not Gameover:
     spaltenauswahl = überprufung(spaltenauswahl, 'Spalte')
     save = board[zeilenauswahl][spaltenauswahl]
     flood_fill(zeilenauswahl, spaltenauswahl, board[zeilenauswahl][spaltenauswahl], ' ') # leere die felder die gleich und anliegend zu dem wausgewählten feld sind 
-    leerefelder(zeilen, spalten, leer) # zähle die leeren felder
+    leer = leerefelder(zeilen, spalten, leer) # zähle die leeren felder
     feldauffüllen() # fülle das ausgewählte feld das durch floodfill geleert wurde wieder auf
     feldverschiebung(zeilen, spalten) # schiebe leere felder nach oben und fülle diese mit zufälligen zahlen
     spielfeld()
