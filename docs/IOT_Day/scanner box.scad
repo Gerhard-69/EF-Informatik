@@ -271,3 +271,32 @@ translate([0, BOX_Z_OUTER, 0]) // 3. translate where you want it
 //box();
 //wemos_bar_right();
 //usb_hole();
+
+BOX_X = 40;
+BOX_Y = 40;
+BOX_Z = 30;
+BOX_WALL = 1.2;
+
+// Interne Parameter
+BOX_INNER_X = BOX_X - 2*BOX_WALL;
+BOX_INNER_Y = BOX_Y - 2*BOX_WALL;
+
+
+module txt() {
+    translate([24,21.5,BOX_Z + WALL_THICKNESS/2])
+        rotate([0,0, -90])
+            linear_extrude(1)       
+            text("MIT",size=8.5,halign="center");
+}
+module txtc() {
+    translate([0,23,BOX_Z + WALL_THICKNESS/2])
+        rotate([0,0, -90])
+            linear_extrude(1)       
+            text("CO",size=5,halign="center");
+}
+module txtcc() {
+    translate([0,17,BOX_Z + WALL_THICKNESS/2])
+        rotate([0,0, -90])
+            linear_extrude(1)       
+            text("2",size=2,halign="center");
+}
