@@ -12,8 +12,14 @@ Headers: Beschreibt das Format bzw. welches von welchem Gerät die Anfrage kommt
 
 Body: Enthält die Daten die der Nutzer zum Server schickt.
 
-JSON:
+JSON: Ist ein Textformat, dass von den meisten API's übernommen ist. Es hat zwei Teile, keys und values. Keys repräsentiert ein Attribut über das Object. Der Key braucht ein value.
+```py
+"crust": "original"
+```  
+Bei einer Pizza wären die Krustenart oder die Toppings der key und die dicke der Kruste oder Pepperoni als Topping das value.
 
-XML: 
-
+XML: Ist wie JSON ein Textformat, dass aber weniger benutzt wird. XML besteht aus einer Node (Key bei JSON) und einem Value.   
+```py
+<crust>original</crust>
+```  
 Polling: Wenn man immer wieder die gleich Anfrage an den Server schickt.
