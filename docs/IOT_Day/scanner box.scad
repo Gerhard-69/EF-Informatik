@@ -253,50 +253,39 @@ module cap() {
             cube([CO2_WIDTH-SENSOR_SUPPORT_BAR_WIDTH*WALL_THICKNESS, 3*WALL_THICKNESS, CO2_HEIGHT]);
     }
 }
-
 // BOX
-translate([BOX_X_OUTER + 10, 0, 0]) // translate where you want it
-    rotate([270, 0, 0]) // 2: rotate
-        translate([WALL_THICKNESS, -BOX_Y_OUTER + WALL_THICKNESS, WALL_THICKNESS]) // 1. bring to origin 
-            box();
+difference() {
+    translate([BOX_X_OUTER + 10, 0, 0]) // translate where you want it
+        rotate([270, 0, 0]) // 2: rotate
+            translate([WALL_THICKNESS, -BOX_Y_OUTER + WALL_THICKNESS, WALL_THICKNESS]) // 1. bring to origin 
+                box();
+    txt();
+    txtc();
+}
 
 // CAP
 translate([0, BOX_Z_OUTER, 0]) // 3. translate where you want it
     rotate([90, 0, 0]) // 2. rotate
         translate([WALL_THICKNESS,WALL_THICKNESS,WALL_THICKNESS]) // 1. bring to origin
             cap();
+module txt(){
+    translate([75,33.5,6])
+        rotate([180,270,90])
+            linear_extrude(1)
+            text("Viigo", size=8); 
+        }
+module txtc(){
+    translate([49,33.5,11])
+        rotate([180,270,90])
+            linear_extrude(1)
+            text("1.772", size=4); 
+        }
+//txt();
+//txtc();
+    
 
 //display_hole();
 //cap();
 //box();
 //wemos_bar_right();
 //usb_hole();
-
-BOX_X = 40;
-BOX_Y = 40;
-BOX_Z = 30;
-BOX_WALL = 1.2;
-
-// Interne Parameter
-BOX_INNER_X = BOX_X - 2*BOX_WALL;
-BOX_INNER_Y = BOX_Y - 2*BOX_WALL;
-
-
-module txt() {
-    translate([24,21.5,BOX_Z + WALL_THICKNESS/2])
-        rotate([0,0, -90])
-            linear_extrude(1)       
-            text("MIT",size=8.5,halign="center");
-}
-module txtc() {
-    translate([0,23,BOX_Z + WALL_THICKNESS/2])
-        rotate([0,0, -90])
-            linear_extrude(1)       
-            text("CO",size=5,halign="center");
-}
-module txtcc() {
-    translate([0,17,BOX_Z + WALL_THICKNESS/2])
-        rotate([0,0, -90])
-            linear_extrude(1)       
-            text("2",size=2,halign="center");
-}
