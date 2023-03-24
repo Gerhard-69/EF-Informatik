@@ -1,6 +1,6 @@
 # Knobelwürfel
 
-![](/docs/images/knoebelwuerfel.png)
+![](images/knoebelwuerfel.png)
 
 ```scad
 cube([3,1,1]);
