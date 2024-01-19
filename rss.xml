@@ -4,7 +4,7 @@
         <title>Lern Blog Blog</title>
         <link>https://Gerhard-69.github.io/EF-Informatik/</link>
         <description>Lern Blog Blog</description>
-        <lastBuildDate>Thu, 27 Apr 2023 19:18:37 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 19 Jan 2024 13:45:57 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
         <language>de</language>
@@ -12,7 +12,7 @@
             <title><![CDATA[Datenstruktur]]></title>
             <link>https://Gerhard-69.github.io/EF-Informatik/Datenstruktur</link>
             <guid>/Datenstruktur</guid>
-            <pubDate>Thu, 27 Apr 2023 19:18:37 GMT</pubDate>
+            <pubDate>Fri, 19 Jan 2024 13:45:57 GMT</pubDate>
             <description><![CDATA[Das Spielfeld besteht aus Zeilen und diese wiederrum auf Spalten und in diesen Spalten sind wiederum Zahlen. "Verbindet" man diese Zahlen werden die Spalten neu definiert.]]></description>
             <content:encoded><![CDATA[<p><img loading="lazy" src="/EF-Informatik/assets/images/Datenstruktur-89de331e7d798e10904e0f21cc8c5f3a.PNG" width="2031" height="1345" class="img_ev3q"></p><p>Das Spielfeld besteht aus Zeilen und diese wiederrum auf Spalten und in diesen Spalten sind wiederum Zahlen. "Verbindet" man diese Zahlen werden die Spalten neu definiert.</p>]]></content:encoded>
         </item>
@@ -20,7 +20,7 @@
             <title><![CDATA[Numtrip Blog]]></title>
             <link>https://Gerhard-69.github.io/EF-Informatik/Numtrip</link>
             <guid>/Numtrip</guid>
-            <pubDate>Thu, 27 Apr 2023 19:18:37 GMT</pubDate>
+            <pubDate>Fri, 19 Jan 2024 13:45:57 GMT</pubDate>
             <description><![CDATA[Ziel des Spiels]]></description>
             <content:encoded><![CDATA[<h2 class="anchor anchorWithStickyNavbar_LWe7" id="ziel-des-spiels">Ziel des Spiels<a class="hash-link" href="#ziel-des-spiels" title="Direkter Link zur Überschrift">​</a></h2><p>Numtrip ist ein Denkspiel das ähnlichkeiten dem sehr populären Spiel 2048 hat. Das Feld besteht auf gleich viel Reihen und Zeilen. Die Felder sind gefüllt zufälligen geraden Zahlen. Man kann ein Feld auswählen, wenn ein anligendes Feld mit der selben Zahl gefüllt werden diese und die mit diesem Feld anliegende Verbunden. Das ausgewählte feld wird verdoppelt. Das ganze geht so bis man 1024 erreicht hat.</p><h2 class="anchor anchorWithStickyNavbar_LWe7" id="umsetzung-des-spiels">Umsetzung des Spiels<a class="hash-link" href="#umsetzung-des-spiels" title="Direkter Link zur Überschrift">​</a></h2><p><strong>Vorraussetzungen</strong><br>
 <!-- -->Um Numtrip spielen zu können braucht man Python, ich habe Visual Studio Code verwendet. Den Code findet man auf meinem Github<br>
@@ -33,7 +33,7 @@
             <title><![CDATA[Top-Down-Entwurf]]></title>
             <link>https://Gerhard-69.github.io/EF-Informatik/Top-Down-Entwurf</link>
             <guid>/Top-Down-Entwurf</guid>
-            <pubDate>Thu, 27 Apr 2023 19:18:37 GMT</pubDate>
+            <pubDate>Fri, 19 Jan 2024 13:45:57 GMT</pubDate>
             <description><![CDATA[Wir haben einmal das Spielfeld in dem schauen müssen, dass zwei oder drei stellige Zahlen zentriert sind und das wir nach einem Spielzug das Feld wieder auffüllen. (Visuelles)]]></description>
             <content:encoded><![CDATA[<p><img loading="lazy" src="/EF-Informatik/assets/images/TopDown Numtrip-bf482b41ab1db54c5de628f2a955df52.png" width="2016" height="1512" class="img_ev3q"></p><p>Wir haben einmal das Spielfeld in dem schauen müssen, dass zwei oder drei stellige Zahlen zentriert sind und das wir nach einem Spielzug das Feld wieder auffüllen. (Visuelles)</p><p>Im Spielzweig passiert alles was man während dem spielen nicht sieht also ob der Spielzug gültig ist, ob das Spiel gestartet wurde und wieviele Punkte der Spieler hat mit einem dementsprechenden Spielende.</p>]]></content:encoded>
         </item>
