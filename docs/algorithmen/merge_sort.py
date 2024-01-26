@@ -30,5 +30,5 @@ def merge_sort(data):
 to_sort = list(range(20000))
 to_sort.sort(reverse= True)
 
-execution_time = timeit(lambda: merge_sort(deepcopy(to_sort)), number=10)
-print('Zeit für 1x Sortieren:', execution_time / 10)
+execution_time = timeit(lambda: merge_sort(deepcopy(to_sort)), number=1)
+print('Zeit für 1x Sortieren:', execution_time / 1)

@@ -1,3 +1,6 @@
+from timeit import timeit
+from copy import deepcopy
+
 def insertion_sort(a):
     for j in range(1, len(a)):
         key = a[j]
@@ -8,6 +11,8 @@ def insertion_sort(a):
         a[i + 1] = key
     return a
 
-to_sort = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
-print('Unsortiert:', to_sort)
-print('Sortiert:  ', insertion_sort(to_sort))
+to_sort = list(range(20000))
+to_sort.sort(reverse= True)
+
+execution_time = timeit(lambda: insertion_sort(deepcopy(to_sort)), number=1)
+print('Zeit für 1x Sortieren:', execution_time / 1)
