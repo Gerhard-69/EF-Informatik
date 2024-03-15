@@ -1,0 +1,33 @@
+cube([30,10,10]);
+translate([10,10,0])
+    cube([10,10,10]);
+translate([0,40,0])
+    cube([20,10,10]);
+translate([0,50,0])
+    cube([10,10,10]);
+translate([0,100,0])
+    cube([30,10,10]);
+translate([0,110,0])
+    cube([10,10,10]);
+translate([50,10,0])
+    cube([20,10,10]);
+translate([50,0,0])
+    cube([10,10,10]);
+translate([50,0,10])
+    cube([10,10,10]);
+translate([100,0,0])
+    cube([20,10,10]);
+translate([110,10,0])
+    cube([10,10,10]);
+translate([110,0,10])
+    cube([10,10,10]);
+translate([50,60,0])
+    cube([20,10,10]);
+translate([50,50,0])
+    cube([10,10,10]);
+translate([50,60,10])
+    cube([10,10,10]);
+translate([50,100,0])
+    cube([20,10,10]);
+translate([60,110,0])
+    cube([20,10,10]);
