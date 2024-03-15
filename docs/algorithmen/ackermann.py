@@ -12,5 +12,5 @@ def  ack(m, n):
     return anw
 
 m = 4
-n = 1
+n = 2
 print (m, n, ack(m,n))

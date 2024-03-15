@@ -27,8 +27,10 @@ def merge_sort(data):
         right = merge_sort(right)
         return merge(left, right)
 
-to_sort = list(range(20000))
-to_sort.sort(reverse= True)
+to_sort = [5, 2, 4, 3, 1]
+#to_sort.sort(reverse= True)
 
-execution_time = timeit(lambda: merge_sort(deepcopy(to_sort)), number=1)
-print('Zeit für 1x Sortieren:', execution_time / 1)
+'''execution_time = timeit(lambda: merge_sort(deepcopy(to_sort)), number=1)
+print('Zeit für 1x Sortieren:', execution_time / 1)'''
+
+print(merge_sort(to_sort))
